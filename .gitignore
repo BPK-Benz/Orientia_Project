@@ -1,0 +1,9 @@
+*.csv
+*.png
+*.pkl
+*.pth
+*.DS_Store
+NewData/.DS_Store
+DontUse_AddName_DropRedundancy/
+Raw_Data/
+Combination/
