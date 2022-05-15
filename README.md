@@ -1,20 +1,10 @@
 # Orientia_Project
 
-This is a part of HighThroughput of Orientia project (whole genome). 
-The highlight is presenting regression analysis with machine learning to predict a key parameter of Biology mechanism under the same environment of scramble gene before performing a tradition evalustion e.g. strictly standardized mean difference (SSMD technique) to find hit genes. 
+This is an analysis part of the HighThroughput of Orientia project (whole genome) to find the hit genes. Normally, hit selection is the direct comparison between the effect of the knockdown gene and that of the reference gene (scramble gene) and there is only an independent parameter considered for each biological process. Two favored techniques are 1) fold change for a replicate in an experiment and 2) strictly standardized mean difference (SSMD) for many replicates in an experiment. Therefore, SSMD is utilized in this experiment because there are three replicates.
+In this experiment, bacteria entry and bacteria translocations are two interesting main processes, and each process can be divided into two sub-processes: inhibit and enhance respectively. The independent variable for the entry and the translocation is the number of bacteria per infected cell (Bac/Inf) and the number of bacteria in the nucleus per infected cell (Nucbac/Inf) respectively.
+From investigating our results, it makes us would like to present an alternative way (regression methods) to find other hit genes that eliminate confounding effects before performing the conservative hit selection. Moreover, we prove the difference between hit genes from both analysis by studying biological pathways and protein complexes contained in OMICs datasets from Metascape software (https://metascape.org/). 
 
-
-There are four main steps for searching hit genes of both Bacteria entry mechanism and Bacteria Translocation mechanism including:
-1. Cleaning all of genes data
-2. Conservative analysis to find hit gene by only using strictly standardized mean difference (SSMD technique). This is a conservative technique that compare only a key parmeter such as number of bacteria per cell.
-3. Adaptive analysis to find hit gene by using both regression analysis and ssmd technique. In here, the comparison should be the same environment that is the key concerned aspect before using the tradition comparison.
-  
-	3.1 There are 8 parent formulars: Multiple_Linear_Regression, Polynomial, Exponential_and_Reciprocal, Exponential2_and_Polynomial, Exponential_and_Linear, Exponential_and_Polynomial2_Degree21, Polynomial_Degree2, Logistic
-  
-	3.2 10 Fold cross validataion is used for find the best optimal parameters of each parent function by minimum L2-Norm and for find the best optimal equation by maximum R-square
-  
-	3.3 The best parent function is used for predicting a key predicted parameter
-  
-	3.4 SSMD Comparison between scramble gene (reference gene) and knocked down gene are evaluated. These are also divided into two sub-process: inhibit and enhance
-	
-4. Combination of each mechanism: Finally, we got hit genes for Bacteria entry mechanism (inhibit and enhance sub-process) and hit genes for Bacteria Translocation mechanism (inhibit and enhance sub-process)
+The overview of the analysis includes three tasks:
+1) Conservative analysis: SSMD
+2) Adaptive analysis: Regression methods with SSMD
+3) Combination hit genes from two analysis for the Bacteria entry and Bacteria translocation 
