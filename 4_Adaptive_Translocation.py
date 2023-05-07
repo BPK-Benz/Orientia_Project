@@ -105,8 +105,8 @@ from sklearn.linear_model import LogisticRegression
 from scipy.optimize import curve_fit
 
 
-# Define 8 formula of parent functions
-def func_1(X ,a0,a1,a2,a3,a4,a5,a6, a7): # func_1 : Multiple_Linear_Regression
+# Define 7 formula of parent functions
+def func_1(X ,a0,a1,a2,a3,a4,a5,a6, a7): # PF1/func_1 : Multiple_Linear_Regression: yes
     x1, x2, x3, x4, x5, x6, x7 = X
     bb = 0
     bb += a0*np.array(x1) + a1*np.array(x2) + a2*np.array(x3) + a3
@@ -114,16 +114,7 @@ def func_1(X ,a0,a1,a2,a3,a4,a5,a6, a7): # func_1 : Multiple_Linear_Regression
     bb += a7*np.array(x7)
     return bb
 
-def func_2(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10): # func_2 : Polynomial
-    x1, x2, x3, x4, x5, x6, x7 = X
-    bb = 0
-    bb += a0*pow(np.array(x1),3) + a1*pow(np.array(x1),2) + a2*pow(np.array(x2),3)+a3*pow(np.array(x2),2)
-    bb += a4*pow(np.array(x3),3)+a5*pow(np.array(x3),2) 
-    bb += a6*np.array(x4) + a7*np.array(x5) + a8*np.array(x6)
-    bb += a9*pow(np.array(x7),3)+a10*pow(np.array(x7),2)
-    return bb
-                                                                                                        
-def func_3(X ,a0,a1,a2,a3,a4,a5,a6,a7): # func_3 : Exponential_and_Reciprocal 
+def func_2(X ,a0,a1,a2,a3,a4,a5,a6,a7): # PF2/func_3 : Exponential_and_Reciprocal : yes
     x1, x2, x3, x4, x5, x6, x7 = X
     bb = 0
     bb += a0*np.exp(a1*np.array(x1)) + a2*1/np.array(x2)  +  a3*1/np.array(x3)
@@ -131,7 +122,7 @@ def func_3(X ,a0,a1,a2,a3,a4,a5,a6,a7): # func_3 : Exponential_and_Reciprocal
     bb += a7*1/np.array(x7)
     return bb
                                                                                                              
-def func_4(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10): # func_4 : Exponential2_and_Polynomial
+def func_3(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10): # PF3/func_4 : Exponential2_and_Polynomial: yes
     x1, x2, x3, x4, x5, x6, x7 = X
     bb = 0
     bb += (a0*pow(np.array(x1),2)+a1*pow(np.array(x1),1)) + (a2*pow(np.array(x2),2)+a3*pow(np.array(x2),1))
@@ -140,7 +131,7 @@ def func_4(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10): # func_4 : Exponential2_and_Po
     bb += a9*pow(np.array(x7),2)+a10*pow(np.array(x7),1)
     return bb
 
-def func_5(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9): # func_5 : Exponential_and_Linear 
+def func_4(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9): # PF4/func_5 : Exponential_and_Linear : yes
     x1, x2, x3, x4, x5, x6, x7 = X
     bb = 0
     bb += a0*np.exp(a1*np.array(x1)) + a2*np.array(x2) + a3*np.array(x3)+a4
@@ -148,7 +139,7 @@ def func_5(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9): # func_5 : Exponential_and_Linear
     bb += a8*pow(np.array(x7),2)+a9*pow(np.array(x7),1)
     return bb
 
-def func_6(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10): # func_6 : Exponential_and_Polynomial2_Degree21 
+def func_5(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10): # PF5/func_6 : Exponential_and_Polynomial2_Degree21 : yes 
     x1, x2, x3, x4, x5, x6, x7 = X
     bb = 0
     bb += a0*np.exp(a1*np.array(x2)) + (a2*pow(np.array(x1),2)+a3*pow(np.array(x1),1))
@@ -157,7 +148,7 @@ def func_6(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10): # func_6 : Exponential_and_Pol
     bb += a9*pow(np.array(x7),2)+a10*pow(np.array(x7),1)
     return bb 
 
-def func_7(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10): # func_7 : Polynomial_Degree2
+def func_6(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10): # PF6/func_7 : Polynomial_Degree2
     x1, x2, x3, x4, x5, x6, x7 = X
     bb = 0
     bb += a0*pow(np.array(x1),2)+a1*pow(np.array(x1),1) + a2*pow(np.array(x2),2)+a3*pow(np.array(x2),1)
@@ -166,7 +157,7 @@ def func_7(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10): # func_7 : Polynomial_Degree2
     bb += a9*pow(np.array(x7),2)+a10*pow(np.array(x7),1)
     return bb
 
-def func_8(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10): # func_8 : Logistic
+def func_7(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10): # PF7/func_8 : Logistic: yes
     x1, x2, x3, x4, x5, x6, x7 = X
     bb = 0
     bb += (a0*pow(np.array(x1),2)+a1*pow(np.array(x1),1)) + (a2*pow(np.array(x2),2)+a3*pow(np.array(x2),1))
@@ -176,8 +167,8 @@ def func_8(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10): # func_8 : Logistic
     return bb
 
 
-num_para = [['func_1',8], ['func_2', 11], ['func_3',8], ['func_4', 11], 
-            ['func_5',10], ['func_6', 11],['func_7', 11], ['func_8', 11]]
+num_para = [['func_1',8], ['func_2',8], ['func_3', 11], 
+            ['func_4',10], ['func_5', 11],['func_6', 11], ['func_7', 11]]
 
 
 # This function is for training data set
@@ -450,8 +441,8 @@ for a in parent_map:
 
 
 ############################################ Evaluation model 
-num_para = [['func_1',8], ['func_2', 11], ['func_3',8], ['func_4', 11], 
-            ['func_5',10], ['func_6', 11],['func_7', 11], ['func_8', 11]]
+num_para = [['func_1',8], ['func_2',8], ['func_3', 11], 
+            ['func_4',10], ['func_5', 11],['func_6', 11], ['func_7', 11]]
 
 b = 'L2-Norm'
 l2 = []
