@@ -111,29 +111,21 @@ from scipy.optimize import curve_fit
 
 
 # Define 8 formula of parent functions
-def func_1(X ,a0,a1,a2,a3,a4,a5,a6): # func_1 : Multiple_Linear_Regression
+def func_1(X ,a0,a1,a2,a3,a4,a5,a6): # PF1/func_1 : Multiple_Linear_Regression: yes
     x1, x2, x3, x4, x5, x6 = X
     bb = 0
     bb += a0*np.array(x1) + a1*np.array(x2) + a2*np.array(x3) + a3
     bb += a4*np.array(x4) + a5*np.array(x5) + a6*np.array(x6)
     return bb
 
-def func_2(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8): # func_2 : Polynomial
-    x1, x2, x3, x4, x5, x6 = X
-    bb = 0
-    bb += a0*pow(np.array(x1),3) + a1*pow(np.array(x1),2) + a2*pow(np.array(x2),3)+a3*pow(np.array(x2),2)
-    bb += a4*pow(np.array(x3),3)+a5*pow(np.array(x3),2) 
-    bb += a6*np.array(x4) + a7*np.array(x5) + a8*np.array(x6)
-    return bb
-                                                                                                        
-def func_3(X ,a0,a1,a2,a3,a4,a5,a6): # func_3 : Exponential_and_Reciprocal 
+def func_2(X ,a0,a1,a2,a3,a4,a5,a6): # func_3 : Exponential_and_Reciprocal 
     x1, x2, x3, x4, x5, x6 = X
     bb = 0
     bb += a0*np.exp(a1*np.array(x1)) + a2*1/np.array(x2)  +  a3*1/np.array(x3)
     bb += a4*np.array(x4) + a5*np.array(x5) + a6*np.array(x6)
     return bb
                                                                                                              
-def func_4(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8): # func_4 : Exponential2_and_Polynomial
+def func_3(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8): # func_4 : Exponential2_and_Polynomial
     x1, x2, x3, x4, x5, x6 = X
     bb = 0
     bb += (a0*pow(np.array(x1),2)+a1*pow(np.array(x1),1)) + (a2*pow(np.array(x2),2)+a3*pow(np.array(x2),1))
@@ -141,14 +133,14 @@ def func_4(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8): # func_4 : Exponential2_and_Polynomia
     bb += a6*np.array(x4) + a7*np.array(x5) + a8*np.array(x6) 
     return bb
 
-def func_5(X ,a0,a1,a2,a3,a4,a5,a6,a7): # func_5 : Exponential_and_Linear 
+def func_4(X ,a0,a1,a2,a3,a4,a5,a6,a7): # func_5 : Exponential_and_Linear 
     x1, x2, x3, x4, x5, x6 = X
     bb = 0
     bb += a0*np.exp(a1*np.array(x1)) + a2*np.array(x2) + a3*np.array(x3)+a4
     bb += a5*np.array(x4) + a6*np.array(x5) + a7*np.array(x6)
     return bb
 
-def func_6(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8): # func_6 : Exponential_and_Polynomial2_Degree21 
+def func_5(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8): # func_6 : Exponential_and_Polynomial2_Degree21 
     x1, x2, x3, x4, x5, x6 = X
     bb = 0
     bb += a0*np.exp(a1*np.array(x2)) + (a2*pow(np.array(x1),2)+a3*pow(np.array(x1),1))
@@ -156,7 +148,7 @@ def func_6(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8): # func_6 : Exponential_and_Polynomial
     bb += a6*np.array(x4) + a7*np.array(x5) + a8*np.array(x6)
     return bb 
 
-def func_7(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8): # func_7 : Polynomial_Degree2
+def func_6(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8): # func_7 : Polynomial_Degree2
     x1, x2, x3, x4, x5, x6 = X
     bb = 0
     bb += a0*pow(np.array(x1),2)+a1*pow(np.array(x1),1) + a2*pow(np.array(x2),2)+a3*pow(np.array(x2),1)
@@ -164,7 +156,7 @@ def func_7(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8): # func_7 : Polynomial_Degree2
     bb += a6*np.array(x4) + a7*np.array(x5) + a8*np.array(x6)
     return bb
 
-def func_8(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8): # func_8 : Logistic
+def func_7(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8): # func_8 : Logistic
     x1, x2, x3, x4, x5, x6 = X
     bb = 0
     bb += (a0*pow(np.array(x1),2)+a1*pow(np.array(x1),1)) + (a2*pow(np.array(x2),2)+a3*pow(np.array(x2),1))
@@ -173,8 +165,8 @@ def func_8(X ,a0,a1,a2,a3,a4,a5,a6,a7,a8): # func_8 : Logistic
     return bb
 
 
-num_para = [['func_1',7], ['func_2', 9], ['func_3',7], ['func_4', 9], 
-            ['func_5',8], ['func_6', 9],['func_7', 9], ['func_8', 9]]
+num_para = [['func_1',7], ['func_2',7], ['func_3', 9], 
+            ['func_4',8], ['func_5', 9],['func_6', 9], ['func_7', 9]]
 
 # This function is for training data set
 def calculation_week(n, func, set1):
@@ -182,9 +174,9 @@ def calculation_week(n, func, set1):
     x1 = set1['Infected/Total_cells'].tolist()
     x2 = [i/1500 for i in set1['Total_cells'].tolist()]
     x3 = [i/1500 for i in set1['UnInf_cells'].tolist()]
-    x4 = set1['Week_Order_1'].tolist()
-    x5 = set1['Week_Order_2'].tolist()
-    x6 = set1['Week_Order_3'].tolist()
+    x4 = set1['Week_Order_1'].tolist() # Replicate_1
+    x5 = set1['Week_Order_2'].tolist() # Replicate_2
+    x6 = set1['Week_Order_3'].tolist() # Replicate_3
     
     
     
@@ -441,8 +433,8 @@ for a in parent_map:
 
 
 ############################################ Evaluation model 
-num_para = [['func_1',7], ['func_2', 9], ['func_3',7], ['func_4', 9], 
-            ['func_5',8], ['func_6', 9],['func_7', 9], ['func_8', 9]]
+num_para = [['func_1',7], ['func_2',7], ['func_3', 9], 
+            ['func_4',8], ['func_5', 9],['func_6', 9], ['func_7', 9]]
 
 b = 'L2-Norm'
 l2 = []
